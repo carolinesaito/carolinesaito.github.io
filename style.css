@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  /*   background-image: url(gggrain.svg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  */
+  /*   background: #fff; */
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  animation: sand 6s;
+}
+
+h1 {
+  font-family: 'Calistoga', sans-serif;
+  font-size: 2em;
+  color: #F2C46D;
+}
+
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 200;
+  color: #5F5C58;
+}
+
+a {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 200;
+  color: #5e9aba
+}
+
+a:hover {
+  font-family: 'Lato', sans-serif;
+  font-size: 1em;
+  font-weight: 200;
+  color: #acc9e1;
+  text-decoration: wavy underline 1.2px;
+}
+
+body {
+
+}
+
+main {
+  align-items: center;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  height:100vh;
+}
+
+.profile-container img {
+  float:left;
+  width: clamp(180px, 20vw, 290px);
+  border-radius:50%;
+}
+
+/* phone !! */
+@media not all and (min-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .profile-container-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-right:8vw;
+    padding-left: 8vw; 
+    gap: 10px;
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3ch;
+  }
+ } 
+
+/* desktop !! */
+@media all and (min-width: 600px) {
+  .profile-container {
+    flex-direction: row;
+    align-self: center;
+    margin-right: 8vw;
+    margin-left: 8vw;
+    gap: 20px;
+  }
+  .profile-container-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-self: center;
+    gap: 5px;
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    gap: 3ch;
+  }
+}
+
+.intro {
+  display: block;
+  max-width: 450px;
+}
+
+
+.wave {
+  width:100%;
+  z-index: 0;
+  position:fixed;
+  bottom: 0;
+  left: 0;
+  transform: translateY(-100vh);
+  animation: jump 2s alternate 2 ease-in-out;
+  animation-delay: -1ms; /* fix for iOS bug doesn't work */
+}
+
+.sand {
+  width: 100%;
+  height: 100%;
+  position:fixed;
+  bottom: 0;
+  object-fit: cover;
+
+}
+
+.disappear {
+  animation: disappear 2s;
+  visibility:hidden;
+}
+
+.shells {
+  width:7vw;
+  position:fixed;
+  transform: translate(-50%,-50%);
+}
+
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes jump {
+  from {
+    transform: translateY(-100vh);
+  }
+  to {
+    transform: translateY(30vw);
+  }
+}
+
+@keyframes disappear {
+  from {
+    visibility:visible;
+  }
+  to {
+    visibility:hidden;
+  }
+}
